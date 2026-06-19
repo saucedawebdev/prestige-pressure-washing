@@ -1469,7 +1469,7 @@ body.lightbox-open {
     }
 
     .hero {
-        min-height: 100svh;
+        min-height: auto;
     }
 
     .hero-overlay {
