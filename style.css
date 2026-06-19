@@ -1376,6 +1376,8 @@ body.lightbox-open {
         background: var(--black);
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
+        transform: none;
+        -webkit-transform: none;
     }
 
     .site-header.is-scrolled {
