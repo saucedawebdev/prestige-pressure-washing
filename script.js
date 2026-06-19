@@ -1,6 +1,5 @@
 (function () {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const header = document.querySelector('.site-header');
     const FORM_RECIPIENT = 'ramonsauceda931@yahoo.com';
 
     /* ── 1. Scroll reveal ── */
@@ -113,21 +112,9 @@
         });
     }
 
-    /* ── 3. Header scroll state ── */
-    function initHeaderScroll() {
-        if (!header) return;
-
-        const onScroll = () => {
-            header.classList.toggle('is-scrolled', window.scrollY > 50);
-        };
-
-        onScroll();
-        window.addEventListener('scroll', onScroll, { passive: true });
-    }
-
-    /* ── 4. Anchor scroll with offset ── */
+    /* ── 3. Anchor scroll with offset ── */
     function getScrollOffset() {
-        return (header?.offsetHeight ?? 80) + 16;
+        return 16;
     }
 
     function scrollToTarget(target) {
@@ -155,7 +142,7 @@
         });
     }
 
-    /* ── 5. Gallery lightbox ── */
+    /* ── 4. Gallery lightbox ── */
     function initGalleryLightbox() {
         const galleryImages = document.querySelectorAll('.gallery-card img');
         if (!galleryImages.length) return;
@@ -232,7 +219,7 @@
         });
     }
 
-    /* ── 6. Contact form ── */
+    /* ── 5. Contact form ── */
     function initContactForm() {
         const form = document.getElementById('contact-form');
         const status = document.getElementById('form-status');
@@ -297,7 +284,6 @@
 
     initScrollReveal();
     initMobileNav();
-    initHeaderScroll();
     initAnchorScroll();
     initGalleryLightbox();
     initContactForm();
