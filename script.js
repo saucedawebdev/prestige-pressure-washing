@@ -60,7 +60,60 @@
         elements.forEach((el) => observer.observe(el));
     }
 
-    /* ── 2. Header scroll state ── */
+    /* ── 2. Mobile navigation ── */
+    function initMobileNav() {
+        const toggle = document.querySelector('.nav-toggle');
+        const menu = document.getElementById('nav-menu');
+        if (!toggle || !menu) return;
+
+        const backdrop = document.createElement('div');
+        backdrop.className = 'nav-backdrop';
+        backdrop.hidden = true;
+        document.body.appendChild(backdrop);
+
+        const closeMenu = () => {
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Open menu');
+            menu.classList.remove('is-open');
+            backdrop.classList.remove('is-visible');
+            backdrop.hidden = true;
+            document.body.classList.remove('nav-open');
+        };
+
+        const openMenu = () => {
+            toggle.setAttribute('aria-expanded', 'true');
+            toggle.setAttribute('aria-label', 'Close menu');
+            menu.classList.add('is-open');
+            backdrop.hidden = false;
+            requestAnimationFrame(() => backdrop.classList.add('is-visible'));
+            document.body.classList.add('nav-open');
+        };
+
+        toggle.addEventListener('click', () => {
+            const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+            if (isOpen) closeMenu();
+            else openMenu();
+        });
+
+        backdrop.addEventListener('click', closeMenu);
+
+        menu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+                closeMenu();
+                toggle.focus();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) closeMenu();
+        });
+    }
+
+    /* ── 3. Header scroll state ── */
     function initHeaderScroll() {
         if (!header) return;
 
@@ -72,7 +125,7 @@
         window.addEventListener('scroll', onScroll, { passive: true });
     }
 
-    /* ── 3. Anchor scroll with offset ── */
+    /* ── 4. Anchor scroll with offset ── */
     function getScrollOffset() {
         return (header?.offsetHeight ?? 80) + 16;
     }
@@ -102,7 +155,7 @@
         });
     }
 
-    /* ── 4. Gallery lightbox ── */
+    /* ── 5. Gallery lightbox ── */
     function initGalleryLightbox() {
         const galleryImages = document.querySelectorAll('.gallery-card img');
         if (!galleryImages.length) return;
@@ -179,7 +232,7 @@
         });
     }
 
-    /* ── 5. Contact form ── */
+    /* ── 6. Contact form ── */
     function initContactForm() {
         const form = document.getElementById('contact-form');
         const status = document.getElementById('form-status');
@@ -243,6 +296,7 @@
     }
 
     initScrollReveal();
+    initMobileNav();
     initHeaderScroll();
     initAnchorScroll();
     initGalleryLightbox();
