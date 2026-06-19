@@ -1345,6 +1345,7 @@ body.lightbox-open {
         background: var(--black);
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
+        position: relative;
     }
 
     .nav-toggle {
