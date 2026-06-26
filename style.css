@@ -714,6 +714,12 @@ section .section-subtitle {
     object-position: center;
 }
 
+.gallery-card--composite img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
 .gallery-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-card-hover);
