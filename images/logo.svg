@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none" role="img" aria-label="ProClean Pressure Washing">
+  <defs>
+    <linearGradient id="drop" x1="12" y1="4" x2="12" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <path d="M12 6c-4.5 6.5-7 11.2-7 16a7 7 0 1 0 14 0c0-4.8-2.5-9.5-7-16z" fill="url(#drop)"/>
+  <path d="M9 24.5c1.2 1.8 2.6 2.7 3 2.7s1.8-.9 3-2.7" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity=".5"/>
+  <text x="34" y="22" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="700" fill="#ffffff">ProClean</text>
+  <text x="34" y="38" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#9ca3b4" letter-spacing="0.08em">PRESSURE WASHING</text>
+</svg>

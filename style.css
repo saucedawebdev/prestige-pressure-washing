@@ -223,7 +223,7 @@ h3 {
 
 .logo img {
     height: auto;
-    width: 120px;
+    width: 160px;
     display: block;
 }
 
@@ -658,8 +658,28 @@ section .section-subtitle {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: start;
-    gap: 1.75rem;
+    gap: 2rem;
     margin-top: 3rem;
+}
+
+.gallery-example {
+    margin: 0;
+}
+
+.gallery-example-title {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    color: var(--platinum);
+}
+
+.gallery-pair {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
 }
 
 .gallery-card {
@@ -730,7 +750,7 @@ section .section-subtitle {
     border: 1px solid var(--border);
 }
 
-.gallery-card:last-child .gallery-label {
+.gallery-after .gallery-label {
     color: var(--blue-bright);
     border-color: rgba(59, 130, 246, 0.3);
     box-shadow: 0 0 15px var(--blue-glow-soft);
@@ -864,27 +884,26 @@ section .section-subtitle {
     font-size: 0.85rem;
 }
 
-/* ── Testimonials ── */
-.testimonials {
+/* ── Our Simple Process ── */
+.our-process {
     background: var(--black);
 }
 
-.testimonials .section-subtitle {
+.our-process .section-subtitle {
     margin-left: auto;
     margin-right: auto;
 }
 
-.testimonials-grid {
+.process-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     margin-top: 3rem;
 }
 
-.testimonial-card {
+.process-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     background: linear-gradient(160deg, rgba(255, 255, 255, 0.03) 0%, transparent 50%), var(--black-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
@@ -896,48 +915,63 @@ section .section-subtitle {
         box-shadow 0.4s ease;
 }
 
-.testimonial-card:hover {
+.process-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(201, 169, 98, 0.2);
+    border-color: rgba(59, 130, 246, 0.25);
     box-shadow: var(--shadow-card-hover);
 }
 
-.testimonial-stars {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--gold);
-    font-weight: 600;
-    letter-spacing: 0.03em;
+.process-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 14px;
+    color: var(--blue-bright);
+    background: var(--blue-glow-soft);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-.testimonial-quote {
-    color: var(--white-muted);
-    font-size: 0.95rem;
-    line-height: 1.75;
-    font-style: italic;
-    margin-bottom: 1.5rem;
+.process-card:hover .process-icon {
+    background: rgba(59, 130, 246, 0.22);
+    border-color: rgba(59, 130, 246, 0.35);
 }
 
-.testimonial-quote::before {
-    content: '\201C';
+.process-step {
     display: block;
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    line-height: 1;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: var(--gold);
-    opacity: 0.5;
     margin-bottom: 0.5rem;
 }
 
-.testimonial-author {
-    font-size: 0.85rem;
+.process-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
     font-weight: 600;
-    letter-spacing: 0.03em;
-    color: var(--platinum);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
 }
 
-@media (max-width: 900px) {
-    .testimonials-grid {
+.process-card p {
+    color: var(--white-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .process-grid {
         grid-template-columns: 1fr;
         max-width: 480px;
         margin-left: auto;
@@ -1328,7 +1362,7 @@ body.lightbox-open {
     }
 
     .logo img {
-        width: 100px;
+        width: 130px;
     }
 
     .nav-links {
@@ -1503,7 +1537,7 @@ body.lightbox-open {
 
     .gallery-grid {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
+        gap: 1.5rem;
     }
 
     .trust-grid {
@@ -1532,7 +1566,7 @@ body.lightbox-open {
         padding: 1.25rem 1.35rem;
     }
 
-    .testimonial-card {
+    .process-card {
         padding: 1.5rem;
     }
 
@@ -1564,7 +1598,7 @@ body.lightbox-open {
     }
 
     .logo img {
-        width: 90px;
+        width: 115px;
     }
 
     .areas-grid {

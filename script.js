@@ -18,7 +18,7 @@
             '.service-card',
             '.gallery-card',
             '.feature-card',
-            '.testimonial-card',
+            '.process-card',
             '.service-areas-map',
             '.area-card',
         ];
@@ -31,7 +31,7 @@
 
             const parent = el.parentElement;
             if (
-                el.matches('.service-card, .gallery-card, .feature-card, .testimonial-card, .area-card, .featured-list li')
+                el.matches('.service-card, .gallery-card, .feature-card, .process-card, .area-card, .featured-list li')
             ) {
                 if (!staggerGroups.has(parent)) staggerGroups.set(parent, []);
                 staggerGroups.get(parent).push(el);
@@ -254,7 +254,7 @@
                         email: formData.get('email'),
                         phone: formData.get('phone'),
                         message: formData.get('message'),
-                        _subject: 'New estimate request — Prestige Pressure Washing',
+                        _subject: 'New estimate request — ProClean Pressure Washing',
                         _template: 'table',
                         _captcha: 'false',
                     }),
